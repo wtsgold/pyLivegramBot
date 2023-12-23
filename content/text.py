@@ -18,7 +18,7 @@ def text(message):
                     sent_message = bot.send_message(config.main_id, message.text)
                     database_query("INSERT OR IGNORE INTO USERS VALUES(?,?,?,?)",
                                    (message.from_user.id, message.from_user.first_name, sent_message.message_id, message.text))
-                    bot.send_message(message.chat.id, config.text_message)
+                   # bot.send_message(message.chat.id, config.text_message)
                     print(message.message_id)
                 else:
                     bot.send_message(message.chat.id, config.notallowed)
@@ -28,7 +28,7 @@ def text(message):
                     sent_message = bot.send_message(config.main_id, message.text)
                     database_query("INSERT INTO USERS VALUES(?,?,?,?)",
                                    (message.from_user.id, message.from_user.first_name, sent_message.message_id, message.text))
-                    bot.send_message(message.chat.id, config.text_message)
+                    #bot.send_message(message.chat.id, config.text_message)
                 elif message.reply_to_message is not None:
                     print(message.reply_to_message.message_id)
                     users = database_query("SELECT user_id FROM USERS WHERE messageid = ?", (message.reply_to_message.message_id,))
