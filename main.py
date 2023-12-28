@@ -20,7 +20,7 @@ create_db_new()
 #config file
 import config
 
-
+@main.route('/')
 #we use pytelegrambotapi library.
 bot = telebot.TeleBot(config.TOKEN)
 
