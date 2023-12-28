@@ -1,9 +1,13 @@
 {
     "version": 2,
     "builds": [
-        { "src": "main.py", "use": "@now/python" }
+        { 
+            "src": "app.py", 
+            "use": "@vercel/python", 
+            "config": { "pythonVersion": "3.10" } 
+        }
     ],
     "routes": [
-        { "src": "/(.*)", "dest": "main.py" }
+        { "src": "/(.*)", "dest": "app.py" }
     ]
 }
